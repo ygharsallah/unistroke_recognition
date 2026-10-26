@@ -1,0 +1,12 @@
+[package]
+name = "unistroke_recognition"
+version = "0.1.0"
+edition = "2024"
+description = "A unistroke gesture recognition library based on stroke direction similarity."
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/ygharsallah/unistroke_recognition"
+keywords = ["gesture", "recognition", "unistroke", "input"]
+categories = ["algorithms", "game-development"]
+
+[dependencies]
