@@ -201,11 +201,11 @@ fn resample_points(points: &[Point], num_points: usize) -> Vec<Point> {
             }
 
             if current_length + segment_length >= target_length {
-                let t = (target_length - current_length) / segment_length;
+                let t = ((target_length - current_length) / segment_length).clamp(0.0, 1.0);
                 resampled_points.push(
                     Point::new(
-                        p1.x() + t * (p2.x() - p1.x()),
-                        p1.y() + t * (p2.y() - p1.y()),
+                        p1.x() + t * (p2.x() - p1.x()).clamp(-1.0, 1.0),
+                        p1.y() + t * (p2.y() - p1.y()).clamp(-1.0, 1.0),
                     )
                     .expect("resampled point should contain finite coordinates"),
                 );
